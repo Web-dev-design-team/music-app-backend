@@ -1,11 +1,25 @@
 import express from 'express';
 import consola from 'consola';
 import dotenv from 'dotenv';
+import { ApolloServer } from 'apollo-server-express';
+import cors from 'cors';
 import databaseConnection from './database';
+import resolvers from './resolvers';
+import typeDefs from './typeDefs';
 
 dotenv.config();
 
 const app = express();
+// app.use(bodyParser.json());
+// app.use(bodyParser.urlencoded({ extended: true }));
+app.use(cors());
+
+const server = new ApolloServer({
+  typeDefs,
+  resolvers,
+});
+
+server.applyMiddleware({ app });
 
 const { PORT } = process.env;
 
