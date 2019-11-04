@@ -1,0 +1,42 @@
+{
+  "name": "music-app-backend",
+  "version": "1.0.0",
+  "description": "An app that allows user listen to variety of musics",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "startdev": "nodemon --exec babel-node src/index.js",
+    "build": "babel src --copy-files --out-dir dist",
+    "start": "node dist/index.js",
+    "migration": "knex migrate:latest",
+    "make:migration": "knex migrate:make",
+    "migrate:rollback": "knex migrate:rollback"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kevoese/music-app-backend.git"
+  },
+  "author": "Kelvin Esegbona, Jude Chinonso, Amos Oruaroghene",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kevoese/music-app-backend/issues"
+  },
+  "homepage": "https://github.com/kevoese/music-app-backend#readme",
+  "dependencies": {
+    "consola": "^2.10.1",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "knex": "^0.20.1",
+    "objection": "^1.6.11",
+    "pg": "^7.12.1"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.6.4",
+    "@babel/core": "^7.6.4",
+    "@babel/node": "^7.6.3",
+    "@babel/plugin-proposal-class-properties": "^7.5.5",
+    "@babel/preset-env": "^7.6.3",
+    "babel-plugin-module-resolver": "^3.2.0",
+    "nodemon": "^1.19.4"
+  }
+}
