@@ -22,6 +22,17 @@
     "url": "https://github.com/kevoese/music-app-backend/issues"
   },
   "homepage": "https://github.com/kevoese/music-app-backend#readme",
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint --ext .json --ext .js --fix",
+      "git add"
+    ]
+  },
   "dependencies": {
     "apollo-server-express": "^2.9.7",
     "bcryptjs": "^2.4.3",
@@ -42,7 +53,14 @@
     "@babel/node": "^7.6.3",
     "@babel/plugin-proposal-class-properties": "^7.5.5",
     "@babel/preset-env": "^7.6.3",
+    "babel-eslint": "^10.0.3",
     "babel-plugin-module-resolver": "^3.2.0",
+    "eslint": "^6.6.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-import-resolver-babel-module": "^5.1.0",
+    "eslint-plugin-import": "^2.18.2",
+    "husky": "^3.0.9",
+    "lint-staged": "^9.4.2",
     "nodemon": "^1.19.4"
   }
 }
