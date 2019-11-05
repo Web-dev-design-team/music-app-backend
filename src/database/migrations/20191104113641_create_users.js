@@ -4,8 +4,7 @@ exports.up = knex =>
       .increments('id')
       .unsigned()
       .primary();
-    table.string('firstName').notNull();
-    table.string('lastName').notNull();
+    table.string('name').notNull();
     table
       .string('email')
       .unique()
@@ -15,7 +14,7 @@ exports.up = knex =>
       .unique()
       .notNull();
     table.string('password').notNull();
-    table.timestamps();
+    table.timestamps(true, true);
     table.string('bio');
     table.string('avatar');
   });
