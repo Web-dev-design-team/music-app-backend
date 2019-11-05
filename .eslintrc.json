@@ -1,6 +1,8 @@
 {
   "root": true,
-  "extends": ["airbnb-base"],
+  "extends": [
+    "airbnb-base"
+  ],
   "env": {
     "node": true,
     "mocha": true,
@@ -20,27 +22,22 @@
     "no-param-reassign": 0,
     "class-methods-use-this": "off",
     "comma-dangle": 0,
-    "curly": ["error", "multi-line"],
-    "no-shadow": ["error", { "allow": ["req", "res", "err"] }],
-    "valid-jsdoc": [
+    "curly": [
+      "error",
+      "multi-line"
+    ],
+    "no-shadow": [
       "error",
       {
-        "requireReturn": true,
-        "requireReturnType": true,
-        "requireParamDescription": false,
-        "requireReturnDescription": true
+        "allow": [
+          "req",
+          "res",
+          "err"
+        ]
       }
     ],
-    "require-jsdoc": [
-      "error",
-      {
-        "require": {
-          "FunctionDeclaration": true,
-          "MethodDefinition": true,
-          "ClassDeclaration": true
-        }
-      }
-    ]
+    "valid-jsdoc": 0,
+    "require-jsdoc": 0
   },
   "settings": {
     "import/resolver": {

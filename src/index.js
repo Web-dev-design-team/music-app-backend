@@ -1,13 +1,11 @@
 import express from 'express';
 import consola from 'consola';
-import dotenv from 'dotenv';
 import { ApolloServer } from 'apollo-server-express';
 import cors from 'cors';
 import databaseConnection from './database';
 import resolvers from './resolvers';
 import typeDefs from './typeDefs';
-
-dotenv.config();
+import { PORT } from '@env';
 
 const app = express();
 // app.use(bodyParser.json());
@@ -21,8 +19,6 @@ const server = new ApolloServer({
 });
 
 server.applyMiddleware({ app });
-
-const { PORT } = process.env;
 
 app.listen(PORT || 4000, () => {
   consola.success(`server start at port ${PORT}`);
