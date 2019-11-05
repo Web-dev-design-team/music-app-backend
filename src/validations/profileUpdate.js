@@ -2,8 +2,7 @@ import Joi from 'joi';
 import joiTest from './helper';
 
 export default (data, errorHandler) => {
-  if (Object.keys(data).every(e => !data[e]))
-    throw new errorHandler('Please update atleast a field');
+  if (Object.keys(data).every((e) => !data[e])) { throw new errorHandler('Please update atleast a field'); }
   const userschema = Joi.object().keys({
     name: Joi.string()
       .trim()

@@ -19,7 +19,8 @@
           "@models": "./src/database/models",
           "@validations": "./src/validations",
           "@auth": "./src/auth",
-          "@env": "./src/env"
+          "@env": "./src/env",
+          "@utils": "./src/utils"
         }
       }
     ],
