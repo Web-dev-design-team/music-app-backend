@@ -16,7 +16,10 @@
         "root": ["./"],
         "alias": {
           "@": "./",
-          "@models": "./src/database/models"
+          "@models": "./src/database/models",
+          "@validations": "./src/validations",
+          "@auth": "./src/auth",
+          "@env": "./src/env"
         }
       }
     ],
