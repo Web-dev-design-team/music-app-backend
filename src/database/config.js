@@ -2,7 +2,7 @@ import dotenv from 'dotenv';
 
 dotenv.config();
 
-export default () => ({
+export default {
     development: {
         client: process.env.DATABASE_CLIENT,
         connection: process.env.DATABASE_URL,
@@ -41,4 +41,4 @@ export default () => ({
             directory: './src/database/migrations'
         }
     }
-});
+};
