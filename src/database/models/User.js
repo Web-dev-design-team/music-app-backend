@@ -2,7 +2,7 @@ import { Model } from 'objection';
 import jwt from 'jsonwebtoken';
 import bcrypt from 'bcryptjs';
 import { sendMailDev } from '@utils/mailSetup';
-import { randomString } from '@utils';
+import { randomString, bycryptHash } from '@utils';
 import { SECRET } from '@env';
 
 class User extends Model {
@@ -10,7 +10,7 @@ class User extends Model {
 
   async $beforeInsert(context) {
     await super.$beforeInsert(context);
-    this.password = await bcrypt.hash(this.password, 10);
+    this.password = await bycryptHash(this.password);
     const randomstr = randomString();
     this.emailVerified = randomstr;
   }
@@ -20,6 +20,14 @@ class User extends Model {
       email: this.email,
       subject: 'Welcome to musicApp',
       text: `verification code is ${this.emailVerified}`
+    });
+  }
+
+  sendPasswordResetMail() {
+    sendMailDev({
+      email: this.email,
+      subject: 'Password Reset',
+      text: `Please go to this link. ${this.password}`
     });
   }
 

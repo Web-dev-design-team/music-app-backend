@@ -6,6 +6,7 @@ import databaseConnection from './database';
 import resolvers from './resolvers';
 import typeDefs from './typeDefs';
 import { PORT } from '@env';
+import AuthDirective from './directives/auth';
 
 const app = express();
 // app.use(bodyParser.json());
@@ -15,7 +16,10 @@ app.use(cors());
 const server = new ApolloServer({
   typeDefs,
   resolvers,
-  context: ({ req }) => ({ token: req.headers.token })
+  schemaDirectives: {
+    auth: AuthDirective,
+  },
+  context: ({ req }) => ({ user: null, token: req.headers.token })
 });
 
 server.applyMiddleware({ app });
