@@ -35,7 +35,7 @@
   },
   "dependencies": {
     "@sendgrid/mail": "^6.4.0",
-    "apollo-server-express": "^2.9.7",
+    "apollo-server-express": "^2.14.2",
     "bcryptjs": "^2.4.3",
     "consola": "^2.10.1",
     "cors": "^2.8.5",
